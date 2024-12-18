@@ -17,7 +17,7 @@ let package = Package(
     dependencies: [
         .package(url: "https://github.com/krzyzanowskim/CryptoSwift.git", from: "1.8.3"),
         .package(url: "https://github.com/attaswift/BigInt.git", from: "5.5.1"),
-        .package(path: "../../secp256k1")
+        .package(url: "https://github.com/Boilertalk/secp256k1.swift.git", from: "0.1.7")
     ],
     targets: [
         .target(
@@ -25,7 +25,7 @@ let package = Package(
             dependencies: [
                 .product(name: "CryptoSwift", package: "CryptoSwift"),
                 .product(name: "BigInt", package: "BigInt"),
-                "secp256k1"
+                .product(name: "secp256k1", package: "secp256k1.swift")
             ],
             resources: [
                 .process("words.txt")
